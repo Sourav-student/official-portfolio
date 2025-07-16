@@ -10,6 +10,7 @@ export async function POST(request: NextRequest) {
     await Hireme.create(data);
     return NextResponse.json({ message: "Form submitted!", success: true});
   } catch (error) {
+    console.log(error);
     return NextResponse.json({message : "Something want wrong!", success : false})
   }
 }

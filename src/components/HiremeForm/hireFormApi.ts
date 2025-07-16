@@ -4,7 +4,14 @@ const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
 });
 
-export default async function postHireFormSubmit(data : any) {
+type hireForm = {
+  name: string,
+  email: string,
+  phone_no: number,
+  message: string,
+};
+
+export default async function postHireFormSubmit(data : hireForm) {
   const res = await api.post("/api/hire-form", data);
   return res;
 }

@@ -1,4 +1,4 @@
-export let skills = [
+const skills = [
     {
       SkillName: 'Java',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
@@ -97,3 +97,5 @@ export let skills = [
       referenceName: 'CodeWithHarry'
     }
   ]
+
+  export default skills;

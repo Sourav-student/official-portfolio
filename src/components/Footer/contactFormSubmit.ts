@@ -4,7 +4,13 @@ const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
 });
 
-export default async function postContactFormSubmit(data : any) {
+type contactForm = {
+  name: string,
+  phone_no: number,
+  message: string
+}
+
+export default async function postContactFormSubmit(data: contactForm) {
   const res = await api.post("/api/contact-form", data);
   return res;
 }

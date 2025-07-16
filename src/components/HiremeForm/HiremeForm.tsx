@@ -33,12 +33,12 @@ export default function HiremeForm() {
 
     setSubmit(true);
     const res = await postHireFormSubmit(hiremeFormData);
-    if(res?.data?.success){
-    toast.success(res?.data?.message);
-    }else{
+    if (res?.data?.success) {
+      toast.success(res?.data?.message);
+    } else {
       toast.error(res?.data?.Message);
     }
-    
+
     setHiremeFormData({
       name: '',
       email: '',

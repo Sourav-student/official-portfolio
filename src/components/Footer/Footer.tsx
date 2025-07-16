@@ -4,7 +4,6 @@ import { toast } from "react-toastify";
 import Link from "next/link";
 import { FaSquareGithub, FaLinkedinIn, FaMessage } from "react-icons/fa6";
 import postContactFormSubmit from "./contactFormSubmit";
-import { set } from "nprogress";
 
 export default function Footer() {
 
@@ -164,7 +163,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="text-center mt-10 text-sm text-gray-500">
-        Made with 💚 in India — Let's build the web together.
+        Made with 💚 in India — Let&apos;s build the web together.
       </div>
     </footer >
 
