@@ -71,18 +71,18 @@ export default function About() {
 
         <h1 className="w-fit mb-3 m-1 text-2xl font-[arial] inline-block relative after:absolute after:bottom-0 after:left-0 after:w-[60%] after:h-[3px] after:bg-[#00ff88]">Education</h1>
 
-        <div className="grid grid-cols-2 gap-5 sm:gap-10 mt-4">
-          <div className="flex flex-wrap sm:gap-5 justify-center items-center p-4 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border border-green-400 hover:scale-102 transition-transform duration-300 hover:shadow-[#5eea37]">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-4">
+          <div className="flex flex-wrap justify-center items-center p-2 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border border-green-400 hover:scale-102 transition-transform duration-300 hover:shadow-[#5eea37]">
             <Image src="/images/hit.png" alt="Haldia Institute of Technology"
-              width={220} height={220} className="mb-2" />
+              width={350} height={350} className="mb-2 rounded-lg shadow-lg border border-yellow-200" />
             <div>
               <h3 className="text-sm font-semibold text-white">Haldia Institute of Technology (2024-2028)</h3>
               <p className="text-xs text-gray-400 mt-1">B.Tech in Computer Science & Engineering</p>
             </div>
           </div>
-          <div className="flex flex-wrap sm:gap-5 justify-center items-center p-4 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border border-green-400 hover:scale-102 transition-transform duration-300 hover:shadow-[#5eea37]">
+          <div className="flex flex-wrap justify-center items-center p-2 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border border-green-400 hover:scale-102 transition-transform duration-300 hover:shadow-[#5eea37]">
             <Image src="/images/school.png" alt="+2 High School Khandamouda"
-              width={220} height={220} className="mb-2" />
+              width={350} height={350} className="mb-2 rounded-lg shadow-lg border border-yellow-200" />
             <div>
               <h3 className="text-sm font-semibold text-white">+2 High School Khandamouda(2017-2024)</h3>
               <p className="text-xs text-gray-400 mt-1">ISc in PCM(92.20%)</p>
@@ -97,10 +97,10 @@ export default function About() {
 
         <h1 className="w-fit mb-3 m-1 text-2xl font-[arial] inline-block relative after:absolute after:bottom-0 after:left-0 after:w-[60%] after:h-[3px] after:bg-[#00ff88]">Certificates</h1>
 
-        <div className="grid grid-cols-2 gap-5 sm:gap-10 mt-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-4">
           <div className="flex flex-wrap sm:gap-5 justify-center items-center p-4 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border border-green-400 hover:scale-102 transition-transform duration-300 hover:shadow-[#5eea37]">
             <Image src="/images/Aadish.png" alt="Web development learning experience"
-              width={220} height={220} className="mb-2" />
+              width={350} height={350} className="mb-2 rounded-lg shadow-lg border border-yellow-200" />
             <div>
               <h3 className="text-sm font-semibold text-white">Aadi Foundation (Jan 2025 - Fab 2025)</h3>
               <p className="text-xs text-gray-400 mt-1">Web Development</p>
@@ -108,7 +108,7 @@ export default function About() {
           </div>
           <div className="flex flex-wrap sm:gap-5 justify-center items-center p-4 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border border-green-400 hover:scale-102 transition-transform duration-300 hover:shadow-[#5eea37]">
             <Image src="/images/NullClass.png" alt="Web development training"
-              width={220} height={220} className="mb-2" />
+              width={350} height={350} className="mb-2 rounded-lg shadow-lg border border-yellow-200" />
             <div>
               <h3 className="text-sm font-semibold text-white">NullClass (May 2025-June 2025)</h3>
               <p className="text-xs text-gray-400 mt-1">Web Development</p>
@@ -116,7 +116,7 @@ export default function About() {
           </div>
           <div className="flex flex-wrap sm:gap-5 justify-center items-center p-4 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border border-green-400 hover:scale-102 transition-transform duration-300 hover:shadow-[#5eea37]">
             <Image src="/images/udemy.png" alt="Communication skills"
-              width={220} height={220} className="mb-2" />
+              width={350} height={350} className="mb-2 rounded-lg shadow-lg border border-yellow-200" />
             <div>
               <h3 className="text-sm font-semibold text-white">Udemy (March 2025-May 2025)</h3>
               <p className="text-xs text-gray-400 mt-1">Communication Skill</p>
