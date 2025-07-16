@@ -21,7 +21,8 @@ export default async function Page({
               src={project.Img1}
               alt={project.title}
               width={800} height={600}
-              className="rounded-xl shadow-lg my-5 border transition-transform hover:scale-105 " />
+              className="rounded-xl shadow-lg my-5 border transition-transform hover:scale-105 "
+            />
             <h2
               className="text-sm sm:text-xl"> PROJECT NAME - <span className="text-yellow-300">{project.project_name.replaceAll('-', ' ')}</span>
             </h2>
@@ -36,9 +37,9 @@ export default async function Page({
                 ))
               }
             </div>
-            <Link 
-            href={project.link}
-            className="mt-6 px-4 py-2 rounded-lg transition-all ease-in-out text-xs sm:text-lg border cursor-pointer bg-[#ffff00] hover:bg-[#00ff88] text-[#000] hover:border-white"
+            <Link
+              href={project.link}
+              className="mt-6 px-4 py-2 rounded-lg transition-all ease-in-out text-xs sm:text-lg border cursor-pointer bg-[#ffff00] hover:bg-[#00ff88] text-[#000] hover:border-white"
             >vist once</Link>
           </div>
         ))

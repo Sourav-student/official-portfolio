@@ -7,7 +7,7 @@ const api = axios.create({
 type hireForm = {
   name: string,
   email: string,
-  phone_no: number,
+  phone_no: string,
   message: string,
 };
 

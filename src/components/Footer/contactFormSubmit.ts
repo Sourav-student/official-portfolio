@@ -6,7 +6,7 @@ const api = axios.create({
 
 type contactForm = {
   name: string,
-  phone_no: number,
+  phone_no: string,
   message: string
 }
 

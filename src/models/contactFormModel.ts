@@ -1,17 +1,17 @@
 import mongoose from "mongoose";
 
 const contactFormSchema = new mongoose.Schema({
-  name : {
-    type : String,
-    required : true
+  name: {
+    type: String,
+    required: true
   },
-  phone_no : {
-    type : Number,
-    required : true
+  phone_no: {
+    type: String,
+    required: true
   },
-  message : {
-    type : String,
-    required : true
+  message: {
+    type: String,
+    required: true
   }
 })
 
