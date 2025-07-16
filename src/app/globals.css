@@ -6,12 +6,8 @@ html{
 }
 
 body{
-  background-image: url(/images/10016491_27230.svg);
-  background-size:cover;
-  background-position:center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: #fff8f8dc;
+  background-image: linear-gradient(to bottom, rgb(31, 28, 28), rgb(32, 32, 32), rgb(50, 50, 50), rgb(0, 0, 0));
+  color: #fffcfcdc;
   overflow-x: hidden;
 }
 
