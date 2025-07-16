@@ -1,103 +1,92 @@
 import Image from "next/image";
+import MyPhoto from "../../public/images/myPhoto.jpg";
+import Typing from "@/components/Typing/Typing";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
+import ProjectInfoCard from "@/components/ProjectInfo/ProjectInfoCard";
+import Link from "next/link";
+import HiremeForm from "@/components/HiremeForm/HiremeForm";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="w-full flex flex-col items-center">
+      {/* hero section */}
+      <section
+        className="bg-[#474d4264] backdrop-blur-md w-[95vw] md:w-[80vw] m-3 p-3 flex justify-center rounded-2xl shadow-lg transition-all duration-300 border border-green-400 max-md:justify-between max-[620px]:flex-col-reverse max-[620px]:items-center hover:shadow-md hover:shadow-green-300"
+        id="intro">
+        <div
+          className="w-auto min-[620px]:w-[300px] md:w-[500px] flex flex-col justify-center gap-4"
+          id="aboutme">
+          <h1 className="max-[350px]:text-2xl text-3xl md:text-4xl font-mono text-yellow-300">Sourav Kumar Bera</h1>
+          <p className="text-2xl text-orange-300 font-[roman]">
+            <Typing />
+          </p>
+          <p className="p-1 w-[300px] font-[itelic]">Weaving together Front-end magic and Backend wizardry to create captivating web experiences.</p>
+          <div
+            className="flex gap-4" id="btns">
+            <a href="/MyResume.pdf" target="_blank"
+              className="bg-amber-400 text-stone-900 px-4 py-1 rounded-md text-lg font-normal border hover:bg-amber-600 hover:text-white hover:border-white transition-all duration-200 cursor-pointer shadow-xs">
+              Resume
+            </a>
+
+            <a href="https://www.linkedin.com/in/sourav-kumar-bera-93254b325" target="_blank"
+              className="bg-amber-400 text-stone-900 p-2 text-xl rounded-md font-normal border hover:bg-amber-600 hover:text-white hover:border-white transition-all duration-200 cursor-pointer shadow-xs"
+            ><BsLinkedin />
+            </a>
+
+            <a href="https://github.com/Sourav-student" target="_blank"
+              className="bg-amber-400 text-stone-900 p-2 text-xl rounded-md font-normal border hover:bg-amber-600 hover:text-white hover:border-white transition-all duration-200 cursor-pointer shadow-xs"
+            ><BsGithub />
+            </a>
+          </div>
+          <Link href="/about"
+            className="w-fit bg-amber-400 text-stone-900 p-2 text-sm rounded-md font-normal border hover:bg-amber-600 hover:text-white hover:border-white transition-all duration-200 cursor-pointer shadow-xs">Read more</Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        <div
+          className="w-[310px] h-[310px] min-[500px]:w-[360px] min-[560px]:h-[355px] my-3 rounded-full flex justify-center items-center bg-gradiate-effect-1 shadow-lg"
+          id="myphoto">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src={MyPhoto}
+            alt="sourav kumar bera photo"
+            className="w-[300px] h-[300px] min-[500px]:w-[350px] min-[500px]:h-[350px] rounded-full hover:scale-102 transition-transform shadow-lg"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </section>
+
+      {/* experience section */}
+      <section className="w-full sm:w-[90%] my-4 mx-16" id="experience">
+        <h1 className="m-1 text-2xl font-[arial] inline-block relative after:absolute after:bottom-0 after:left-0 after:w-[60%] after:h-[3px] after:bg-[#00ff88]">Experience</h1>
+        <div className="px-4 py-6 grid grid-cols-1 min-[400px]:grid-cols-2 md:grid-cols-3 gap-4">
+          <ProjectInfoCard projectName="AEIE-Department-Website" image="/images/projectsImages/aeie_dept.png" title="Making a website for AEIE department of Haldia Institute of Technology" link="https://hit-aeie.netlify.app/" key={1} />
+        </div>
+      </section>
+
+      {/* feature projects */}
+      <section
+        className="w-full sm:w-[90%] my-4 mx-16"
+        id="projects">
+        <h1 className="m-1 text-2xl font-[arial] inline-block relative after:absolute after:bottom-0 after:left-0 after:w-[60%] after:h-[3px] after:bg-[#00ff88]">Feature Projects</h1>
+        <div className="px-4 py-6 grid grid-cols-1 min-[400px]:grid-cols-2 md:grid-cols-3 gap-4">
+          <ProjectInfoCard projectName="Hitian-inside-website" image="/images/projectsImages/hitianInside.png" title="Hitian inside - It is a full stack project made using react" link="https://hitianinsideofficial-psi.vercel.app/" key={1} />
+          <ProjectInfoCard projectName="TodoList-website" image="/images/projectsImages/todoList.png" title="TodoList - It is a full stack project made using react, tailwind " link="https://todo-list-murex-six.vercel.app/" key={2} />
+          <ProjectInfoCard projectName="Rock-Paper-Scissors-game" image="/images/projectsImages/RPSGame.png" title="Rock paper scissors - It is a javaScript logic project" link="https://sourav-rock-paper-scissors.vercel.app/" key={3} />
+        </div>
+
+        <div className="w-full flex justify-center">
+          <Link href='/projects' className="mt-2 px-4 py-1 text-black rounded-lg transition-all ease-in-out bg-amber-300 hover:bg-amber-600 border hover:text-white cursor-pointer hover:border-white">See more</Link></div>
+      </section>
+
+      {/* hire me section */}
+      <section id="hire" className="w-full px-4 py-8">
+        <div className="max-w-4xl mx-auto bg-[#474d4264] backdrop-blur-md rounded-2xl shadow-lg transition-all duration-300 border border-green-400 p-6 sm:p-10 hover:shadow-md hover:shadow-green-300">
+          <h1 className="text-3xl sm:text-4xl font-semibold text-center mb-4 text-white">Want to hire me?</h1>
+          <p className="text-base sm:text-lg text-center mb-8 text-gray-200">
+            I’m available for freelance work. If you have a project in mind, feel free to reach out!
+          </p>
+          <HiremeForm />
+        </div>
+      </section>
     </div>
   );
 }
