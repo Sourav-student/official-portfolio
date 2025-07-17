@@ -40,7 +40,7 @@ export default async function Page({
             <Link
               href={project.link}
               className="mt-6 px-4 py-2 rounded-lg transition-all ease-in-out text-xs sm:text-lg border cursor-pointer bg-[#ffff00] hover:bg-[#00ff88] text-[#000] hover:border-white"
-            >vist once</Link>
+            >visit once</Link>
           </div>
         ))
       }
