@@ -57,7 +57,7 @@ export default function Home() {
       {/* experience section */}
       <section className="w-full sm:w-[90%] my-4 mx-16" id="experience">
         <h1 className="m-1 text-2xl font-[arial] inline-block relative after:absolute after:bottom-0 after:left-0 after:w-[60%] after:h-[3px] after:bg-[#00ff88]">Experience</h1>
-        <div className="px-4 py-6 grid grid-cols-1 min-[400px]:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="px-4 py-6 grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-3 gap-4">
           <ProjectInfoCard projectName="AEIE-Department-Website" image="/images/projectsImages/aeie_dept.png" title="Making a website for AEIE department of Haldia Institute of Technology" link="https://hit-aeie.netlify.app/" key={1} />
         </div>
       </section>
@@ -67,7 +67,7 @@ export default function Home() {
         className="w-full sm:w-[90%] my-4 mx-16"
         id="projects">
         <h1 className="m-1 text-2xl font-[arial] inline-block relative after:absolute after:bottom-0 after:left-0 after:w-[60%] after:h-[3px] after:bg-[#00ff88]">Feature Projects</h1>
-        <div className="px-4 py-6 grid grid-cols-1 min-[400px]:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="px-4 py-6 grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-3 gap-4">
           <ProjectInfoCard projectName="Hitian-inside-website" image="/images/projectsImages/hitianInside.png" title="Hitian inside - It is a full stack project made using react" link="https://hitianinsideofficial-psi.vercel.app/" key={1} />
           <ProjectInfoCard projectName="TodoList-website" image="/images/projectsImages/todoList.png" title="TodoList - It is a full stack project made using react, tailwind " link="https://todo-list-murex-six.vercel.app/" key={2} />
           <ProjectInfoCard projectName="Rock-Paper-Scissors-game" image="/images/projectsImages/RPSGame.png" title="Rock paper scissors - It is a javaScript logic project" link="https://sourav-rock-paper-scissors.vercel.app/" key={3} />
