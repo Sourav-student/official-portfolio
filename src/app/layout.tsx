@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "../components/Header/Header";
 import ProgressBar from "@/components/Progressbar/Progressbar";
 import Footer from "@/components/Footer/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ScrollToTop/>
         <ProgressBar />
         <Header />
         {children}

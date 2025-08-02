@@ -1,10 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-html{
-  scroll-behavior: smooth;
-}
-
 body{
   background-image: linear-gradient(to bottom, rgb(31, 28, 28), rgb(32, 32, 32), rgb(50, 50, 50), rgb(0, 0, 0));
   color: #fffcfcdc;

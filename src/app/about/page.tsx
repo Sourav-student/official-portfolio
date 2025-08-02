@@ -1,7 +1,8 @@
 'use client';
 import { useState } from 'react';
-import skills  from '@/datasets/skills';
+import skills from '@/datasets/skills';
 import Image from 'next/image';
+import { motion } from "motion/react";
 
 export default function About() {
   const [mySkills] = useState(skills);
@@ -41,7 +42,6 @@ export default function About() {
         </div>
       </section>
 
-
       {/* skills */}
       <section className="flex flex-col px-4 py-8">
 
@@ -50,7 +50,14 @@ export default function About() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
           {
             mySkills.map((skill, index) => (
-              <div key={index} className="flex flex-col items-center p-4 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border  border-green-400 hover:scale-105 transition-transform duration-300 hover:shadow-[#5eea37]">
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.90 }}
+                key={index}
+                className="flex flex-col items-center p-4 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border  border-green-400 hover:shadow-[#5eea37]">
                 <Image src={skill.icon} alt={`${skill.SkillName} icon`}
                   width={120} height={120}
                   className="mb-2" />
@@ -60,7 +67,7 @@ export default function About() {
                     {skill.referenceName}
                   </a>
                 )}
-              </div>
+              </motion.div>
             ))
           }
         </div>
@@ -72,15 +79,27 @@ export default function About() {
         <h1 className="w-fit mb-3 m-1 text-2xl font-[arial] inline-block relative after:absolute after:bottom-0 after:left-0 after:w-[60%] after:h-[3px] after:bg-[#00ff88]">Education</h1>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-4">
-          <div className="flex flex-wrap justify-center items-center p-2 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border border-green-400 hover:scale-102 transition-transform duration-300 hover:shadow-[#5eea37]">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.90 }}
+            className="flex flex-wrap justify-center items-center p-2 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border border-green-400 hover:scale-102 transition-transform duration-300 hover:shadow-[#5eea37]">
             <Image src="/images/hit.png" alt="Haldia Institute of Technology"
               width={350} height={350} className="mb-2 rounded-lg shadow-lg border border-yellow-200" />
             <div>
               <h3 className="text-sm font-semibold text-white">Haldia Institute of Technology (2024-2028)</h3>
               <p className="text-xs text-gray-400 mt-1">B.Tech in Computer Science & Engineering</p>
             </div>
-          </div>
-          <div className="flex flex-wrap justify-center items-center p-2 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border border-green-400 hover:scale-102 transition-transform duration-300 hover:shadow-[#5eea37]">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.90 }}
+            className="flex flex-wrap justify-center items-center p-2 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border border-green-400 hover:scale-102 transition-transform duration-300 hover:shadow-[#5eea37]">
             <Image src="/images/school.png" alt="+2 High School Khandamouda"
               width={350} height={350} className="mb-2 rounded-lg shadow-lg border border-yellow-200" />
             <div>
@@ -88,7 +107,7 @@ export default function About() {
               <p className="text-xs text-gray-400 mt-1">ISc in PCM(92.20%)</p>
               <p className="text-xs text-gray-400 mt-1">Class 10th(89.20%)</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -98,30 +117,48 @@ export default function About() {
         <h1 className="w-fit mb-3 m-1 text-2xl font-[arial] inline-block relative after:absolute after:bottom-0 after:left-0 after:w-[60%] after:h-[3px] after:bg-[#00ff88]">Certificates</h1>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-4">
-          <div className="flex flex-wrap sm:gap-5 justify-center items-center p-4 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border border-green-400 hover:scale-102 transition-transform duration-300 hover:shadow-[#5eea37]">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.90 }}
+            className="flex flex-wrap sm:gap-5 justify-center items-center p-4 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border border-green-400 hover:scale-102 transition-transform duration-300 hover:shadow-[#5eea37]">
             <Image src="/images/Aadish.png" alt="Web development learning experience"
               width={350} height={350} className="mb-2 rounded-lg shadow-lg border border-yellow-200" />
             <div>
               <h3 className="text-sm font-semibold text-white">Aadi Foundation (Jan 2025 - Fab 2025)</h3>
               <p className="text-xs text-gray-400 mt-1">Web Development</p>
             </div>
-          </div>
-          <div className="flex flex-wrap sm:gap-5 justify-center items-center p-4 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border border-green-400 hover:scale-102 transition-transform duration-300 hover:shadow-[#5eea37]">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.90 }}
+            className="flex flex-wrap sm:gap-5 justify-center items-center p-4 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border border-green-400 hover:scale-102 transition-transform duration-300 hover:shadow-[#5eea37]">
             <Image src="/images/NullClass.png" alt="Web development training"
               width={350} height={350} className="mb-2 rounded-lg shadow-lg border border-yellow-200" />
             <div>
               <h3 className="text-sm font-semibold text-white">NullClass (May 2025-June 2025)</h3>
               <p className="text-xs text-gray-400 mt-1">Web Development</p>
             </div>
-          </div>
-          <div className="flex flex-wrap sm:gap-5 justify-center items-center p-4 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border border-green-400 hover:scale-102 transition-transform duration-300 hover:shadow-[#5eea37]">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.90 }}
+            className="flex flex-wrap sm:gap-5 justify-center items-center p-4 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border border-green-400 hover:scale-102 transition-transform duration-300 hover:shadow-[#5eea37]">
             <Image src="/images/udemy.png" alt="Communication skills"
               width={350} height={350} className="mb-2 rounded-lg shadow-lg border border-yellow-200" />
             <div>
               <h3 className="text-sm font-semibold text-white">Udemy (March 2025-May 2025)</h3>
               <p className="text-xs text-gray-400 mt-1">Communication Skill</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>
