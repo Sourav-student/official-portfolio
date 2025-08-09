@@ -76,7 +76,7 @@ export default function Header() {
             <Link href="/about">About</Link>
           </li>
           <li className={linkStyle}>
-            <Link href="/projects">Projects</Link>
+            <Link href="/works">Works</Link>
           </li>
           <li className={linkStyle}>
             <Link href="/resume">Resume</Link>
@@ -91,7 +91,7 @@ export default function Header() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: -10 }}
               transition={{ duration: 0.3 }}
-              className="absolute top-16 right-4 bg-[#000000e6] border border-yellow-400 rounded-lg p-6 flex flex-col gap-5 text-lg text-white min-[600px]:hidden shadow-lg z-40"
+              className="w-full absolute top-16 right-0 bg-[#1f1e1ebe] border backdrop-blur-md rounded-lg p-6 flex flex-col justify-center items-center gap-5 text-lg text-white min-[600px]:hidden shadow-lg z-40"
             >
               <li className={linkStyle}>
                 <Link href="/" onClick={() => setManubar(false)}>Home</Link>
@@ -100,7 +100,7 @@ export default function Header() {
                 <Link href="/about" onClick={() => setManubar(false)}>About</Link>
               </li>
               <li className={linkStyle}>
-                <Link href="/projects" onClick={() => setManubar(false)}>Projects</Link>
+                <Link href="/works" onClick={() => setManubar(false)}>Works</Link>
               </li>
               <li className={linkStyle}>
                 <Link href="/resume" onClick={() => setManubar(false)}>Resume</Link>

@@ -87,8 +87,6 @@ export default function Home() {
 
       {/* experience section */}
       <motion.section
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="w-full sm:w-[90%] my-4 mx-16" id="experience">
         <h1 className="m-1 text-2xl font-[arial] inline-block">Experience</h1>
@@ -100,8 +98,6 @@ export default function Home() {
 
       {/* feature projects */}
       <motion.section
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="w-full sm:w-[90%] my-4 mx-16"
         id="projects">
