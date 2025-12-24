@@ -1,11 +1,32 @@
 'use client';
-import { useState } from 'react';
-import skills from '@/datasets/skills';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion } from "motion/react";
+import axios from 'axios';
+import SkeletonCard from '@/components/Skeleton/SkillsSkeleton';
+
+type SkillType = {
+  _id: string,
+  skill_name: string,
+  skill_img: string,
+  skill_info: string
+}
 
 export default function About() {
-  const [mySkills] = useState(skills);
+  const [mySkills, setMySkills] = useState<SkillType[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  const getAllSkills = async () => {
+    setLoading(true);
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/skill/all`);
+    // console.log(res.data.skills);
+    setMySkills(res.data.skills);
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    getAllSkills();
+  }, [])
 
   return (
     <>
@@ -56,21 +77,28 @@ export default function About() {
                 transition={{ duration: 0.5, delay: 0.1 * index }}
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.90 }}
-                key={index}
+                key={skill._id}
                 className="flex flex-col items-center p-4 bg-[#474d4264] backdrop-blur-lg rounded-lg shadow-md border  border-green-400 hover:shadow-[#5eea37]">
-                <Image src={skill.icon} alt={`${skill.SkillName} icon`}
+                <Image src={skill.skill_img} alt={`${skill.skill_name} icon`}
                   width={120} height={120}
                   className="mb-2" />
-                <h3 className="text-lg font-semibold text-white">{skill.SkillName}</h3>
-                {skill.reference && (
-                  <a href={skill.reference} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-400 mt-1">
-                    {skill.referenceName}
-                  </a>
+                <h3 className="text-lg font-semibold text-white">{skill.skill_name}</h3>
+                {skill.skill_info && (
+                  <p className="text-sm text-blue-400 mt-1 cursor-pointer">
+                    {skill.skill_info}
+                  </p>
                 )}
               </motion.div>
             ))
           }
         </div>
+        {
+          loading && <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4 w-full">
+            {Array.from({ length: 8 }).map((_, index) => (
+              <SkeletonCard key={index} />
+            ))}
+          </div>
+        }
       </section>
 
       {/* Education */}
