@@ -8,10 +8,9 @@ type dataType = {
   title: string,
   image: string,
   link: string,
-  key: number
 }
 
-export default function ProjectInfoCard({ projectName, title, image, link, key }: dataType) {
+export default function ProjectInfoCard({ projectName, title, image, link }: dataType) {
   return (
     <>
       <motion.div
@@ -30,7 +29,7 @@ export default function ProjectInfoCard({ projectName, title, image, link, key }
           transition: { type: "spring", stiffness: 200, damping: 12 }
         }}
         className="bg-[#4343364e] backdrop-blur-xs p-2 flex flex-col items-center rounded-xl shadow-lg border border-[#57954d]"
-        key={key}
+        key={projectName}
       >
         <Link href={`/project-info/${projectName}`}>
           <motion.div

@@ -23,7 +23,6 @@ export default function Projects() {
                 title={project.title}
                 image={project.Img1}
                 link={project.link}
-                key={index}
               />
             ))
           }
