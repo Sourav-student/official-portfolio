@@ -29,19 +29,17 @@ export default function ProjectInfoCard({ projectName, title, image, link }: dat
           transition: { type: "spring", stiffness: 200, damping: 12 }
         }}
         className="bg-[#4343364e] backdrop-blur-xs p-2 flex flex-col items-center rounded-xl shadow-lg border border-[#57954d]"
-        key={projectName}
+        key={Math.random() * projectName.length}
       >
-        <Link href={`/project-info/${projectName}`}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, type: "spring", stiffness: 120, damping: 14 }}
-          >
-            <Image src={image} alt={title} width={450} height={450} className="rounded-xl" />
-            {title.length > 30 ? title.slice(0, 30) + "..." : title}{" "}
-            <span className="text-blue-400">read more</span>
-          </motion.div>
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, type: "spring", stiffness: 120, damping: 14 }}
+        >
+          <Image src={image} alt={title} width={450} height={450} className="rounded-xl" />
+          {title.length > 30 ? title.slice(0, 30) + "..." : title}{" "}
+          <span className="text-blue-400">read more</span>
+        </motion.div>
 
         <Link
           href={link}

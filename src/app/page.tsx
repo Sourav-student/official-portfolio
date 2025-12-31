@@ -104,9 +104,9 @@ export default function Home() {
         <h1 className="m-1 text-2xl font-[arial] inline-block">Feature Projects</h1>
         <div
           className="px-4 py-6 grid grid-cols-1 min-[450px]:grid-cols-2 xl:grid-cols-3 gap-4">
-          <ProjectInfoCard projectName="Hitian-inside-website" image="/images/projectsImages/hitianInside.png" title="Hitian inside - It is a full stack project made using react" link="https://hitianinsideofficial-psi.vercel.app/" key={1} />
-          <ProjectInfoCard projectName="TodoList-website" image="/images/projectsImages/todoList.png" title="TodoList - It is a full stack project made using react, tailwind " link="https://todo-list-murex-six.vercel.app/" key={2} />
-          <ProjectInfoCard projectName="Rock-Paper-Scissors-game" image="/images/projectsImages/RPSGame.png" title="Rock paper scissors - It is a javaScript logic project" link="https://sourav-rock-paper-scissors.vercel.app/" key={3} />
+          <ProjectInfoCard projectName="Hitian-inside-website" image="/images/projectsImages/hitianInside.png" title="Hitian inside - It is a full stack project made using react" link="https://hitianinsideofficial-psi.vercel.app/" />
+          <ProjectInfoCard projectName="TodoList-website" image="/images/projectsImages/todoList.png" title="TodoList - It is a full stack project made using react, tailwind " link="https://todo-list-murex-six.vercel.app/" />
+          <ProjectInfoCard projectName="Rock-Paper-Scissors-game" image="/images/projectsImages/RPSGame.png" title="Rock paper scissors - It is a javaScript logic project" link="https://sourav-rock-paper-scissors.vercel.app/" />
         </div>
 
         <div className="w-full flex justify-center">
