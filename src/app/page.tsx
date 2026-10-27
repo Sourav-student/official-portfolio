@@ -1,134 +1,301 @@
-"use client"
-import { motion } from "motion/react";
+"use client";
+
 import Image from "next/image";
-import MyPhoto from "../../public/images/myPhoto.jpg";
-import Typing from "@/components/Typing/Typing";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
-import ProjectInfoCard from "@/components/ProjectInfo/ProjectInfoCard";
 import Link from "next/link";
-import HiremeForm from "@/components/HiremeForm/HiremeForm";
+import {
+  ArrowDown,
+  ArrowDownRight,
+  ArrowUpRight,
+  BrainCircuit,
+  Code2,
+  Github,
+  Linkedin,
+  Mail,
+  Sparkles,
+  Terminal,
+} from "lucide-react";
+import { motion } from "motion/react";
+import MyPhoto from "../../public/images/myPhoto.jpg";
+import projects from "@/datasets/projects";
+
+const featuredProjects = projects.filter((project) => project.featured);
+
+const headingVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.16, delayChildren: 0.1 },
+  },
+};
+
+const headingLineVariants = {
+  hidden: { opacity: 0, y: 42, filter: "blur(7px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] as const },
+  },
+};
+
+const focusAreas = [
+  { label: "Frontend", detail: "React · Next.js · TypeScript", icon: Code2 },
+  { label: "Backend", detail: "Node.js · Spring Boot · REST", icon: Terminal },
+  { label: "AI & data", detail: "Machine learning · Gemini API", icon: BrainCircuit },
+];
 
 export default function Home() {
-
   return (
-    <div className="w-full flex flex-col items-center">
-      {/* hero section */}
-      <motion.section
-        initial={{ opacity: 0, scale: 0.97 }}
-        animate={{ opacity: 1, scale: 1 }}
-        whileHover={{ boxShadow: "0 0 15px rgba(125, 235, 105, 0.6)" }}
-        whileTap={{ scale: 0.96 }}
-        transition={{ duration: 0.5 }}
-        className="bg-[#474d4264] backdrop-blur-md w-[95vw] md:w-[80vw] m-3 p-6 flex justify-between rounded-2xl shadow-md border border-green-400 max-md:items-center max-md:flex-col-reverse gap-10"
-        id="intro"
-      >
-        {/* Left Content */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center gap-4">
-          <h1 className="text-4xl xl:text-5xl font-extrabold text-yellow-300 tracking-wide font-mono">
-            Sourav Kumar Bera
-          </h1>
+    <main>
+      <section className="hero-section page-shell" id="home">
+        <div className="hero-copy">
+          <motion.p
+            className="eyebrow"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="status-dot" /> OPEN TO OPPORTUNITIES
+          </motion.p>
+          <motion.h1
+            variants={headingVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.span className="hero-heading-line" variants={headingLineVariants}>
+              Building useful
+            </motion.span>
+            <motion.span className="hero-heading-line" variants={headingLineVariants}>
+              things for the <span className="gradient-text">web.</span>
+            </motion.span>
+          </motion.h1>
+          <motion.p
+            className="hero-description"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            I&apos;m Sourav Kumar Bera — a computer science student and
+            full-stack developer who enjoys turning thoughtful ideas into
+            polished, dependable products.
+          </motion.p>
 
-          <p className="text-2xl text-orange-300 font-semibold">
-            <Typing />
-          </p>
-
-          <p className="text-base sm:text-lg text-white italic max-w-[400px]">
-            Weaving together Front-end magic and Backend wizardry to create captivating web experiences.
-          </p>
-
-          {/* Buttons */}
-          <div className="flex gap-4 flex-wrap">
+          <motion.div
+            className="hero-actions"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <Link href="/works" className="button button-primary">
+              Explore my work <ArrowUpRight size={17} aria-hidden="true" />
+            </Link>
             <a
-              href="/MyResume.pdf"
+              href="/images/Sourav%20Kumar%20Bera%20(3).pdf"
               target="_blank"
-              className="border px-4 py-2 rounded-xl flex items-center justify-center transition-all hover:bg-[#fff032] hover:text-black text-[18px]"
+              rel="noreferrer"
+              className="button button-secondary"
             >
-              Resume
+              View résumé
             </a>
+          </motion.div>
 
-            <a
-              href="https://www.linkedin.com/in/sourav-kumar-bera-93254b325"
-              target="_blank"
-              className="border px-4 py-2 rounded-xl flex items-center justify-center transition-all hover:bg-[#fff032] hover:text-black text-[18px]"
-            >
-              <BsLinkedin />
-            </a>
-
+          <motion.div
+            className="social-links"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.45 }}
+          >
             <a
               href="https://github.com/Sourav-student"
               target="_blank"
-              className="border px-4 py-2 rounded-xl flex items-center justify-center transition-all hover:bg-[#fff032] hover:text-black text-[18px]"
+              rel="noreferrer"
+              aria-label="Sourav on GitHub"
             >
-              <BsGithub />
+              <Github size={18} aria-hidden="true" />
             </a>
+            <a
+              href="https://www.linkedin.com/in/sourav-kumar-bera-93254b325"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Sourav on LinkedIn"
+            >
+              <Linkedin size={18} aria-hidden="true" />
+            </a>
+            <a href="mailto:souravbera620595@gmail.com" aria-label="Email Sourav">
+              <Mail size={18} aria-hidden="true" />
+            </a>
+            <span className="social-caption">Let&apos;s make something meaningful.</span>
+          </motion.div>
+        </div>
+
+        <motion.div
+          className="hero-visual"
+          initial={{ opacity: 0, scale: 0.92, rotate: 2 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+        >
+          <motion.div
+            className="portrait-orbit orbit-one"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 42, ease: "linear", repeat: Infinity }}
+          />
+          <motion.div
+            className="portrait-orbit orbit-two"
+            animate={{ rotate: -360 }}
+            transition={{ duration: 58, ease: "linear", repeat: Infinity }}
+          />
+          <div className="portrait-frame">
+            <Image
+              src={MyPhoto}
+              alt="Sourav Kumar Bera"
+              fill
+              priority
+              sizes="(max-width: 700px) 72vw, 380px"
+              className="portrait-image"
+            />
+          </div>
+          <motion.div
+            className="floating-note"
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <Sparkles size={16} aria-hidden="true" />
+            <span>Curious by nature</span>
+          </motion.div>
+          <div className="portrait-caption">
+            <span className="caption-line" />
+            <span>Haldia, India · CSE &apos;28</span>
+          </div>
+        </motion.div>
+
+        <a href="#about" className="scroll-cue">
+          <ArrowDown size={15} aria-hidden="true" /> Scroll to explore
+        </a>
+      </section>
+
+      <section className="section-block page-shell" id="about">
+        <div className="section-heading">
+          <p className="eyebrow">A LITTLE ABOUT ME</p>
+          <h2>Curiosity, craft, and a little bit of code.</h2>
+        </div>
+        <div className="intro-grid">
+          <motion.div
+            className="intro-card"
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.55 }}
+          >
+            <p>
+              I&apos;m pursuing a B.Tech in Computer Science at Haldia Institute
+              of Technology. I like working across the stack — from shaping
+              thoughtful interfaces to building the APIs and data models behind
+              them.
+            </p>
+            <p>
+              I&apos;ve worked with product teams at Eastri and Amaanitvam
+              Foundation, and I&apos;m always looking for the next interesting
+              problem to solve.
+            </p>
+            <Link href="/about" className="text-link">
+              More about me <ArrowUpRight size={16} aria-hidden="true" />
+            </Link>
+          </motion.div>
+          <div className="focus-list">
+            {focusAreas.map(({ label, detail, icon: Icon }, index) => (
+              <motion.div
+                className="focus-item"
+                key={label}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: index * 0.1 }}
+              >
+                <span className="focus-icon">
+                  <Icon size={20} aria-hidden="true" />
+                </span>
+                <span>
+                  <strong>{label}</strong>
+                  <small>{detail}</small>
+                </span>
+                <ArrowDownRight className="focus-arrow" size={17} aria-hidden="true" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block projects-section" id="projects">
+        <div className="page-shell">
+          <div className="section-heading section-heading-row">
+            <div>
+              <p className="eyebrow">SELECTED PROJECTS</p>
+              <h2>Ideas made into real things.</h2>
+            </div>
+            <Link href="/works" className="text-link">
+              All projects <ArrowUpRight size={16} aria-hidden="true" />
+            </Link>
           </div>
 
-          <Link
-            href="/about"
-            className="w-fit border px-4 py-2 rounded-xl flex items-center justify-center transition-all hover:bg-[#fff032] hover:text-black text-[18px]"
-          >
-            Read more
-          </Link>
+          <div className="featured-grid">
+            {featuredProjects.map((project, index) => {
+              const ProjectIcon = [BrainCircuit, Code2, Sparkles][index];
+              return (
+                <motion.article
+                  className={`project-card project-card-${index + 1}`}
+                  key={project.slug}
+                  initial={{ opacity: 0, y: 32 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{ duration: 0.55, delay: index * 0.12 }}
+                  whileHover={{ y: -8, scale: 1.015 }}
+                >
+                  <Link
+                    href={`/project-info/${project.slug}`}
+                    className="project-card-link"
+                    aria-label={`View ${project.name} project details`}
+                  >
+                    <div className="project-art">
+                      <div className="art-grid" />
+                      <span className="art-index">0{index + 1}</span>
+                      <ProjectIcon className="art-icon" size={42} strokeWidth={1.4} aria-hidden="true" />
+                      <motion.span
+                        className="art-orb"
+                        animate={{ scale: [0.9, 1.12, 0.9], opacity: [0.5, 1, 0.5] }}
+                        transition={{ duration: 5 + index, repeat: Infinity, ease: "easeInOut" }}
+                      />
+                      <span className="art-label">{project.category}</span>
+                    </div>
+                    <div className="project-card-copy">
+                      <div className="project-title-row">
+                        <h3>{project.name}</h3>
+                        <span className="project-arrow">
+                          <ArrowUpRight size={18} aria-hidden="true" />
+                        </span>
+                      </div>
+                      <p>{project.summary}</p>
+                      <div className="tag-list">
+                        {project.stack.map((technology) => (
+                          <span className="tag" key={technology}>{technology}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </Link>
+                </motion.article>
+              );
+            })}
+          </div>
         </div>
+      </section>
 
-        {/* Right Photo */}
-        <motion.div
-          whileHover={{ scale: 1.05, rotate: 1 }}
-          transition={{ duration: 0.4 }}
-          className="w-[310px] h-[310px] sm:w-[360px] sm:h-[360px] rounded-full flex justify-center items-center border"
-        >
-          <Image
-            src={MyPhoto}
-            alt="sourav kumar bera photo"
-            className="w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] rounded-full object-cover hover:scale-105 transition-transform"
-          />
-        </motion.div>
-      </motion.section>
-
-      {/* experience section */}
-      <motion.section
-        transition={{ duration: 0.6 }}
-        className="w-full sm:w-[90%] my-4 mx-16" id="experience">
-        <h1 className="m-1 text-2xl font-[arial] inline-block">Experience</h1>
-        <div
-          className="px-4 py-6 grid grid-cols-1 min-[450px]:grid-cols-2 xl:grid-cols-3 gap-4">
-          <ProjectInfoCard projectName="AEIE-Department-Website" image="/images/projectsImages/aeie_dept.png" title="Making a website for AEIE department of Haldia Institute of Technology" link="https://hit-aeie.netlify.app/" key={1} />
+      <section className="contact-banner page-shell" id="contact">
+        <div>
+          <p className="eyebrow">HAVE A GOOD ONE IN MIND?</p>
+          <h2>Let&apos;s build something that matters.</h2>
         </div>
-      </motion.section>
-
-      {/* feature projects */}
-      <motion.section
-        transition={{ duration: 0.6 }}
-        className="w-full sm:w-[90%] my-4 mx-16"
-        id="projects">
-        <h1 className="m-1 text-2xl font-[arial] inline-block">Feature Projects</h1>
-        <div
-          className="px-4 py-6 grid grid-cols-1 min-[450px]:grid-cols-2 xl:grid-cols-3 gap-4">
-          <ProjectInfoCard projectName="Hitian-inside-website" image="/images/projectsImages/hitianInside.png" title="Hitian inside - It is a full stack project made using react" link="https://hitianinsideofficial-psi.vercel.app/" />
-          <ProjectInfoCard projectName="TodoList-website" image="/images/projectsImages/todoList.png" title="TodoList - It is a full stack project made using react, tailwind " link="https://todo-list-murex-six.vercel.app/" />
-          <ProjectInfoCard projectName="Rock-Paper-Scissors-game" image="/images/projectsImages/RPSGame.png" title="Rock paper scissors - It is a javaScript logic project" link="https://sourav-rock-paper-scissors.vercel.app/" />
-        </div>
-
-        <div className="w-full flex justify-center">
-          <Link href='/projects' className="mt-2 px-4 py-1 text-black rounded-lg transition-all ease-in-out bg-amber-300 hover:bg-amber-600 border hover:text-white cursor-pointer hover:border-white">See more</Link></div>
-      </motion.section>
-
-      {/* hire me section */}
-      <motion.section
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        id="hire" className="w-full px-4 py-8">
-        <motion.div
-          whileHover={{ boxShadow: "0 0 10px #7deb69" }}
-          className="max-w-4xl mx-auto bg-[#393b372f] backdrop-blur-md rounded-2xl shadow-lg transition-all duration-300 border border-green-400 p-6 sm:p-10">
-          <h1 className="text-3xl sm:text-4xl font-semibold text-center mb-4 text-white">Want to hire me?</h1>
-          <p className="text-base sm:text-lg text-center mb-8 text-gray-200">
-            I’m available for freelance work. If you have a project in mind, feel free to reach out!
-          </p>
-          <HiremeForm />
-        </motion.div>
-      </motion.section>
-    </div>
+        <a href="mailto:souravbera620595@gmail.com" className="button button-primary">
+          Say hello <ArrowUpRight size={17} aria-hidden="true" />
+        </a>
+      </section>
+    </main>
   );
 }

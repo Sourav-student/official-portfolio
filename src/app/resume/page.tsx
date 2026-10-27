@@ -1,62 +1,195 @@
+"use client";
+
+import Link from "next/link";
+import { ArrowDownToLine, ArrowUpRight, Mail } from "lucide-react";
+import { motion } from "motion/react";
+import SkillsShowcase from "@/components/SkillsShowcase";
+
+const resumeUrl = "/images/Sourav%20Kumar%20Bera%20(3).pdf";
+
+const roles = [
+  {
+    title: "Full Stack Developer Intern",
+    company: "Amaanitvam Foundation · Remote",
+    period: "Jul 2026 — Present",
+    details: [
+      "Develop and maintain the Learning Resources module using React.js, Node.js, Express.js, and MongoDB.",
+      "Build REST APIs for resource upload, update, deletion, search, filtering, and pagination.",
+      "Design MongoDB schemas for resource metadata, categories, subjects, domains, and access information.",
+    ],
+  },
+  {
+    title: "Web Development Intern",
+    company: "Eastri · Mumbai, Maharashtra",
+    period: "Aug 2025 — Nov 2025",
+    details: [
+      "Built 10+ reusable UI components, improving consistency and reducing duplicate implementation effort.",
+      "Improved Lighthouse performance from 75 to 92 through asset optimization and component-level improvements.",
+      "Collaborated in an existing codebase using Git-based development workflows.",
+    ],
+  },
+];
+
+const projectHighlights = [
+  {
+    name: "Interview Preparation Tracker",
+    details: "Next.js, Tailwind CSS, MongoDB, Express.js, Gemini API",
+  },
+  {
+    name: "Link Shortener",
+    details: "Spring Boot, React.js, Tailwind CSS, PostgreSQL",
+  },
+  {
+    name: "Placement Prediction System",
+    details: "Python, scikit-learn, Pandas, NumPy, FastAPI · ~79% accuracy",
+  },
+];
+
 export default function Resume() {
   return (
-    <>
-      <section className="bg-[#282828] rounded-2xl m-3 text-gray-200 min-h-screen px-6 py-10 font-sans shadow-lg">
-        <div className="max-w-5xl mx-auto space-y-10">
-          {/* Header */}
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-green-400">Sourav Kumar Bera</h1>
-            <p className="mt-2 text-sm text-gray-400">+91 6201046595 • souravbera620595@gmail.com • East Singhbhum, India</p>
-          </div>
-
-          {/* Summary */}
-          <div>
-            <h2 className="text-2xl font-semibold text-yellow-400 mb-2">Summary</h2>
-            <p className="text-gray-300">
-              Aspiring web developer with expertise in front-end technologies including React. Proven ability to create responsive applications focused on user experience and performance optimization. Strong understanding of modern UI libraries and design principles. Committed to delivering high-quality, user-friendly web solutions.
-            </p>
-          </div>
-          {/* Experience */}
-          <div>
-            <h2 className="text-2xl font-semibold text-yellow-400 mb-2">Experience</h2>
-            <div>
-              <p className="text-green-400 font-medium">Front End Development – AEIE Department Website</p>
-              <p className="text-sm text-gray-400 italic">Haldia Institute Of Technology | Apr 2025 – May 2025</p>
-              <ul className="list-disc list-inside mt-2 space-y-1 text-gray-300 text-sm">
-                <li>Developed responsive UI with 85% mobile optimization.</li>
-                <li>Built Event and Student Chapter sections with clean layout and smooth navigation.</li>
-                <li>Deployed frontend via Netlify for performance.</li>
-              </ul>
-            </div>
-          </div>
-          {/* Projects */}
-          <div>
-            <h2 className="text-2xl font-semibold text-yellow-400 mb-2">Projects</h2>
-            <ul className="space-y-2 text-gray-300 text-sm list-disc list-inside">
-              <li><span className="text-green-400 font-medium">Full-stack E-Media Website:</span> React, Node.js, MongoDB, Tailwind, Google Auth, Cloudinary</li>
-              <li><span className="text-green-400 font-medium">Link Shortener App:</span> React, Express.js, MongoDB, Tailwind</li>
-              <li><span className="text-green-400 font-medium">Todo List (MERN):</span> React, Express.js, MongoDB, Tailwind</li>
-              <li><span className="text-green-400 font-medium">Rock Paper Scissors Game:</span> HTML, CSS, JavaScript, DOM manipulation</li>
-              <li><span className="text-green-400 font-medium">Recipe Finder Website:</span> JavaScript, HTML, CSS, Public API</li>
-            </ul>
-          </div>
-          {/* Skills */}
-          <div>
-            <h2 className="text-2xl font-semibold text-yellow-400 mb-2">Skills</h2>
-            <p className="text-gray-300 text-sm">
-              Express.js, Node.js, React, JavaScript, Tailwind CSS, Bootstrap, REST APIs, Git, GSAP, JWT, MongoDB, MySQL, Mongoose, Multer, C Programming
-            </p>
-          </div>
-          {/* Education */}
-          <div>
-            <h2 className="text-2xl font-semibold text-yellow-400 mb-2">Education</h2>
-            <ul className="text-sm text-gray-300 space-y-1">
-              <li><span className="text-green-400 font-medium">B.Tech – CSE:</span> Haldia Institute of Technology (2028 Expected) – GPA: 8.95</li>
-              <li><span className="text-green-400 font-medium">I.Sc – PCM:</span> +2 High School Khandamouda – 92.20%</li>
-            </ul>
-          </div>
+    <main className="page-shell subpage">
+      <motion.header
+        className="resume-heading"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.65, ease: "easeOut" }}
+      >
+        <div>
+          <p className="eyebrow">THE SHORT VERSION</p>
+          <h1>Sourav Kumar Bera</h1>
+          <p className="resume-subtitle">Full-stack developer · Computer Science student</p>
+          <p className="resume-contact">
+            Haldia, West Bengal <span>·</span> +91 6201046595 <span>·</span>{" "}
+            souravbera620595@gmail.com
+          </p>
         </div>
-      </section>
-    </>
-  )
+        <a href={resumeUrl} target="_blank" rel="noreferrer" className="button button-primary">
+          Download resume <ArrowDownToLine size={17} aria-hidden="true" />
+        </a>
+      </motion.header>
+
+      <motion.section
+        className="resume-summary"
+        initial={{ opacity: 0, x: -24 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.55 }}
+      >
+        <p>
+          Computer Science and Engineering student with experience building
+          responsive interfaces, reusable components, and REST APIs. Interested
+          in full-stack product development, machine learning, and creating
+          software that solves practical problems.
+        </p>
+      </motion.section>
+
+      <motion.section
+        className="resume-section"
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.55 }}
+      >
+        <div className="resume-section-heading">
+          <p className="eyebrow">CAREER</p>
+          <h2>Experience</h2>
+        </div>
+        <div className="resume-list">
+          {roles.map((role) => (
+            <article className="resume-item" key={role.company}>
+              <div className="resume-item-heading">
+                <div>
+                  <h3>{role.title}</h3>
+                  <p>{role.company}</p>
+                </div>
+                <span>{role.period}</span>
+              </div>
+              <ul>
+                {role.details.map((detail) => <li key={detail}>{detail}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </motion.section>
+
+      <motion.section
+        className="resume-section"
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.55 }}
+      >
+        <div className="resume-section-heading">
+          <p className="eyebrow">THINGS I&apos;VE BUILT</p>
+          <h2>Selected projects</h2>
+        </div>
+        <div className="resume-projects">
+          {projectHighlights.map((project) => (
+            <article className="resume-project" key={project.name}>
+              <h3>{project.name}</h3>
+              <p>{project.details}</p>
+              <Link href={`/project-info/${project.name.toLowerCase().replaceAll(" ", "-")}`} className="text-link">
+                Project details <ArrowUpRight size={15} aria-hidden="true" />
+              </Link>
+            </article>
+          ))}
+        </div>
+      </motion.section>
+
+      <motion.section
+        className="resume-bottom-grid"
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.55 }}
+      >
+        <article className="resume-section">
+          <div className="resume-section-heading">
+            <p className="eyebrow">FOUNDATION</p>
+            <h2>Education</h2>
+          </div>
+          <h3>B.Tech, Computer Science & Engineering</h3>
+          <p>Haldia Institute of Technology · Expected July 2028</p>
+          <p>CGPA: 9.25 / 10</p>
+        </article>
+        <article className="resume-section">
+          <div className="resume-section-heading">
+            <p className="eyebrow">TECHNICAL TOOLKIT</p>
+            <h2>Skills</h2>
+          </div>
+          <p>Full-stack development, data engineering, machine learning, and core computer science.</p>
+        </article>
+      </motion.section>
+
+      <motion.section
+        className="resume-section resume-skills-section"
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.55 }}
+      >
+        <div className="resume-section-heading">
+          <p className="eyebrow">TECHNICAL TOOLKIT</p>
+          <h2>Skills & technologies</h2>
+        </div>
+        <SkillsShowcase />
+      </motion.section>
+
+      <motion.section
+        className="resume-cta"
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{ duration: 0.55 }}
+      >
+        <div>
+          <p className="eyebrow">LET&apos;S CONNECT</p>
+          <h2>Have an opportunity in mind?</h2>
+        </div>
+        <a href="mailto:souravbera620595@gmail.com" className="button button-secondary">
+          <Mail size={16} aria-hidden="true" /> Email Sourav
+        </a>
+      </motion.section>
+    </main>
+  );
 }

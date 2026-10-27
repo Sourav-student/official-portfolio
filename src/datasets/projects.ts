@@ -1,274 +1,137 @@
-const projects = [
+export type PortfolioProject = {
+  slug: string;
+  name: string;
+  summary: string;
+  stack: string[];
+  image?: string;
+  imageAlt?: string;
+  liveUrl?: string;
+  category: string;
+  featured?: boolean;
+};
+
+const projects: PortfolioProject[] = [
   {
-    project_name: "AEIE-Department-Website",
-    Img1: "/images/projectsImages/aeie_dept.png",
-    title: "AEIE dapartment website - Made a real product",
-    link: "https://hit-aeie.netlify.app/",
-    tech_stack: [
-      {
-        skill_name: 'HTML',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-      },
-      {
-        skill_name: 'CSS',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-      },
-      {
-        skill_name: 'JavaScript',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-      },
-      {
-        skill_name: 'Git',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-      },
-      {
-        skill_name: 'GitHub',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
-      }
-    ]
+    slug: "interview-preparation-tracker",
+    name: "Interview Preparation Tracker",
+    summary:
+      "A full-stack interview-prep platform for tracking progress, practising AI-assisted mock interviews, and getting personalized feedback.",
+    stack: ["Next.js", "Tailwind CSS", "MongoDB", "Express.js", "Gemini API"],
+    category: "Full stack · AI",
+    featured: true,
   },
   {
-    project_name: "Hitian-inside-website",
-    Img1: "/images/projectsImages/hitianInside.png",
-    title: "Hitian Inside a full stack website",
-    link: "https://hitianinsideofficial-psi.vercel.app/",
-    tech_stack: [
-      {
-        skill_name: 'React.js',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-      },
-      {
-        skill_name: 'Tailwind CSS',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg',
-      }, {
-        skill_name: 'Node.js',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-      },
-      {
-        skill_name: 'MongoDB',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-      },
-      {
-        skill_name: 'Expree.js',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
-      },
-      {
-        skill_name: 'Git',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-      },
-      {
-        skill_name: 'GitHub',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
-      },
-      {
-        skill_name: 'Postman',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg',
-      },
-    ]
+    slug: "link-shortener",
+    name: "Link Shortener",
+    summary:
+      "A URL-shortening service with collision-safe links, persistent storage, redirect handling, click tracking, and analytics.",
+    stack: ["Spring Boot", "React.js", "Tailwind CSS", "PostgreSQL"],
+    category: "Full stack · Java",
+    featured: true,
   },
   {
-    project_name: "TodoList-website",
-    Img1: "/images/projectsImages/todoList.png",
-    title: "TodoList a full stack website that store your todos in Database",
-    link: "https://todo-list-murex-six.vercel.app/",
-    tech_stack: [
-      {
-        skill_name: 'React.js',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-      },
-      {
-        skill_name: 'Tailwind CSS',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg',
-      }, {
-        skill_name: 'Node.js',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-      },
-      {
-        skill_name: 'MongoDB',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-      },
-      {
-        skill_name: 'Expree.js',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
-      },
-      {
-        skill_name: 'Git',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-      },
-      {
-        skill_name: 'GitHub',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
-      },
-      {
-        skill_name: 'Postman',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg',
-      },
-    ]
+    slug: "placement-prediction-system",
+    name: "Placement Prediction System",
+    summary:
+      "A machine-learning project that compares classification models and serves real-time placement predictions through an API.",
+    stack: ["Python", "scikit-learn", "Pandas", "NumPy", "FastAPI"],
+    category: "Machine learning",
+    featured: true,
   },
   {
-    project_name: "Rock-Paper-Scissors-game",
-    Img1: "/images/projectsImages/RPSGame.png",
-    title: "Rock Paper and Scissors a game with JavaScript logic",
-    link: "https://sourav-rock-paper-scissors.vercel.app/",
-    tech_stack: [
-      {
-        skill_name: 'HTML',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-      },
-      {
-        skill_name: 'CSS',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-      },
-      {
-        skill_name: 'JavaScript',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-      },
-      {
-        skill_name: 'Git',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-      },
-      {
-        skill_name: 'GitHub',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
-      }
-    ]
+    slug: "aeie-department-website",
+    name: "AEIE Department Website",
+    summary:
+      "A responsive department website with event and student-chapter sections, built for the AEIE department at Haldia Institute of Technology.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    image: "/images/projectsImages/aeie_dept.png",
+    imageAlt: "AEIE department website",
+    liveUrl: "https://hit-aeie.netlify.app/",
+    category: "Web development",
   },
   {
-    project_name: "musicscape-website",
-    Img1: "/images/projectsImages/music.png",
-    title: "Musicscape a which store songs ",
-    link: "https://musicscape.vercel.app/",
-    tech_stack: [
-      {
-        skill_name: 'React.js',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-      },
-      {
-        skill_name: 'Tailwind CSS',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg',
-      },
-      {
-        skill_name: 'Git',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-      },
-      {
-        skill_name: 'GitHub',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
-      }
-    ]
+    slug: "hitian-inside",
+    name: "Hitian Inside",
+    summary:
+      "A full-stack campus community website built to bring student-focused resources and updates together.",
+    stack: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
+    image: "/images/projectsImages/hitianInside.png",
+    imageAlt: "Hitian Inside website",
+    liveUrl: "https://hitianinsideofficial-psi.vercel.app/",
+    category: "Full stack",
   },
   {
-    project_name: "Forecasthub-website",
-    Img1: "/images/projectsImages/weather.png",
-    title: "Weather website - Forecasthub see weather more easyly",
-    link: "https://forecasthub.vercel.app/",
-    tech_stack: [
-      {
-        skill_name: 'HTML',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-      },
-      {
-        skill_name: 'CSS',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-      },
-      {
-        skill_name: 'JavaScript',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-      },
-      {
-        skill_name: 'Git',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-      },
-      {
-        skill_name: 'GitHub',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
-      }
-    ]
+    slug: "todo-list",
+    name: "Todo List",
+    summary:
+      "A full-stack task manager for creating and organizing todos with a persistent database.",
+    stack: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
+    image: "/images/projectsImages/todoList.png",
+    imageAlt: "Todo list application",
+    liveUrl: "https://todo-list-murex-six.vercel.app/",
+    category: "Full stack",
   },
   {
-    project_name: "QR-Code-generator-website",
-    Img1: "/images/projectsImages/QRCODE.png",
-    title: "QR code generator website - It generate QR code using API",
-    link: "https://qrcodegenerator-inky.vercel.app/",
-    tech_stack: [
-      {
-        skill_name: 'HTML',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-      },
-      {
-        skill_name: 'CSS',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-      },
-      {
-        skill_name: 'JavaScript',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-      },
-      {
-        skill_name: 'Git',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-      },
-      {
-        skill_name: 'GitHub',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
-      }
-    ]
+    slug: "rock-paper-scissors",
+    name: "Rock Paper Scissors",
+    summary:
+      "A lightweight browser game built around interactive JavaScript logic and a responsive interface.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    image: "/images/projectsImages/RPSGame.png",
+    imageAlt: "Rock Paper Scissors game",
+    liveUrl: "https://sourav-rock-paper-scissors.vercel.app/",
+    category: "Web development",
   },
   {
-    project_name: "tic-tac-toe-game",
-    Img1: "/images/projectsImages/tic-tac-toe.png",
-    title: "Tic Tac Toe Game - Let's fun",
-    link: "https://sourav-tic-tac-toe.vercel.app/",
-    tech_stack: [
-      {
-        skill_name: 'HTML',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-      },
-      {
-        skill_name: 'CSS',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-      },
-      {
-        skill_name: 'JavaScript',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-      },
-      {
-        skill_name: 'Git',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-      },
-      {
-        skill_name: 'GitHub',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
-      }
-    ]
+    slug: "musicscape",
+    name: "Musicscape",
+    summary: "A music discovery experience with a clean, responsive interface.",
+    stack: ["React.js", "Tailwind CSS"],
+    image: "/images/projectsImages/music.png",
+    imageAlt: "Musicscape music website",
+    liveUrl: "https://musicscape.vercel.app/",
+    category: "Web development",
   },
   {
-    project_name: "GetRecipe-website",
-    Img1: "/images/projectsImages/getRecipe.png",
-    title: "GetRecipe - Let's make something special",
-    link: "https://foods-recipe-alpha.vercel.app/",
-    tech_stack: [
-      {
-        skill_name: 'HTML',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-      },
-      {
-        skill_name: 'CSS',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-      },
-      {
-        skill_name: 'JavaScript',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-      },
-      {
-        skill_name: 'Git',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-      },
-      {
-        skill_name: 'GitHub',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
-      }
-    ]
+    slug: "forecast-hub",
+    name: "Forecast Hub",
+    summary: "A simple weather experience designed to make forecasts easy to explore.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    image: "/images/projectsImages/weather.png",
+    imageAlt: "Forecast Hub weather website",
+    liveUrl: "https://forecasthub.vercel.app/",
+    category: "Web development",
   },
-]
+  {
+    slug: "qr-code-generator",
+    name: "QR Code Generator",
+    summary: "A browser-based QR code generator with a straightforward, focused workflow.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    image: "/images/projectsImages/QRCODE.png",
+    imageAlt: "QR code generator",
+    liveUrl: "https://qrcodegenerator-inky.vercel.app/",
+    category: "Web development",
+  },
+  {
+    slug: "tic-tac-toe",
+    name: "Tic Tac Toe",
+    summary: "A classic two-player game brought to life with interactive JavaScript.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    image: "/images/projectsImages/tic-tac-toe.png",
+    imageAlt: "Tic Tac Toe game",
+    liveUrl: "https://sourav-tic-tac-toe.vercel.app/",
+    category: "Web development",
+  },
+  {
+    slug: "recipe-finder",
+    name: "Recipe Finder",
+    summary: "A recipe discovery website that helps turn a search into an idea for your next meal.",
+    stack: ["HTML", "CSS", "JavaScript", "Public API"],
+    image: "/images/projectsImages/getRecipe.png",
+    imageAlt: "Recipe Finder website",
+    liveUrl: "https://foods-recipe-alpha.vercel.app/",
+    category: "Web development",
+  },
+];
 
 export default projects;

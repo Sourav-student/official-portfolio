@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+// @ts-ignore Next.js processes this global CSS import.
 import "./globals.css";
 import Header from "../components/Header/Header";
 import ProgressBar from "@/components/Progressbar/Progressbar";
 import Footer from "@/components/Footer/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { ToastContainer } from "react-toastify";
+import ChatWidget from "@/components/ChatWidget";
+import { MotionConfig } from "motion/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,8 +21,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sourav-Portfolio",
-  description: "This is the my official portfolio",
+  title: "Sourav Kumar Bera — Full-Stack Developer",
+  description:
+    "Portfolio of Sourav Kumar Bera, a computer science student and full-stack developer building thoughtful web products.",
 };
 
 export default function RootLayout({
@@ -29,15 +33,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ScrollToTop/>
-        <ProgressBar />
-        <Header />
-        {children}
-        <Footer/>
-        <ToastContainer/>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <MotionConfig reducedMotion="user">
+          <ScrollToTop />
+          <ProgressBar />
+          <Header />
+          {children}
+          <Footer />
+          <ChatWidget />
+          <ToastContainer />
+        </MotionConfig>
       </body>
     </html >
   );
