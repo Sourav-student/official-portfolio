@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="footer-links">
           <Link href="/about">About</Link>
           <Link href="/works">Works</Link>
-          <Link href="/resume">Résumé</Link>
+          <Link href="/resume">Resume</Link>
           <a href="mailto:souravbera620595@gmail.com">Contact</a>
         </div>
         <div className="footer-socials">

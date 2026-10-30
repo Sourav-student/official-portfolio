@@ -2,23 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowDown,
-  ArrowDownRight,
-  ArrowUpRight,
-  BrainCircuit,
-  Code2,
-  Github,
-  Linkedin,
-  Mail,
-  Sparkles,
-  Terminal,
-} from "lucide-react";
+import { ArrowDown, ArrowDownRight, ArrowUpRight, BrainCircuit, Code2, Github, Linkedin, Mail, Sparkles,  Terminal } from "lucide-react";
 import { motion } from "motion/react";
 import MyPhoto from "../../public/images/myPhoto.jpg";
 import projects from "@/datasets/projects";
 
-const featuredProjects = projects.filter((project) => project.featured);
+const featuredProjects = projects.filter((project) => project.featured).slice(0, 2);
 
 const headingVariants = {
   hidden: {},
@@ -74,7 +63,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            I&apos;m Sourav Kumar Bera — a computer science student and
+            I&apos;m Sourav Kumar Bera - a computer science student and
             full-stack developer who enjoys turning thoughtful ideas into
             polished, dependable products.
           </motion.p>
@@ -94,7 +83,7 @@ export default function Home() {
               rel="noreferrer"
               className="button button-secondary"
             >
-              View résumé
+              View resume
             </a>
           </motion.div>
 
@@ -318,7 +307,12 @@ export default function Home() {
           <p className="eyebrow">HAVE A GOOD ONE IN MIND?</p>
           <h2>Let&apos;s build something that matters.</h2>
         </div>
-        <a href="mailto:souravbera620595@gmail.com" className="button button-primary">
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=souravbera620595@gmail.com&su=Hello%20Sourav"
+          target="_blank"
+          rel="noreferrer"
+          className="button button-primary"
+        >
           Say hello <ArrowUpRight size={17} aria-hidden="true" />
         </a>
       </section>
