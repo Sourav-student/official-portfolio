@@ -18,7 +18,7 @@ const projects: PortfolioProject[] = [
       "A full-stack interview-prep platform for tracking progress, practising AI-assisted mock interviews, and getting personalized feedback.",
     stack: ["Next.js", "Tailwind CSS", "MongoDB", "Express.js", "Gemini API"],
     category: "Full stack · AI",
-    featured: true,
+    liveUrl: "https://interview-preparation-beta.vercel.app/"
   },
   {
     slug: "link-shortener",
@@ -27,7 +27,7 @@ const projects: PortfolioProject[] = [
       "A URL-shortening service with collision-safe links, persistent storage, redirect handling, click tracking, and analytics.",
     stack: ["Spring Boot", "React.js", "Tailwind CSS", "PostgreSQL"],
     category: "Full stack · Java",
-    featured: true,
+    liveUrl: "https://beshort-tan.vercel.app/"
   },
   {
     slug: "placement-prediction-system",
@@ -36,7 +36,15 @@ const projects: PortfolioProject[] = [
       "A machine-learning project that compares classification models and serves real-time placement predictions through an API.",
     stack: ["Python", "scikit-learn", "Pandas", "NumPy", "FastAPI"],
     category: "Machine learning",
-    featured: true,
+  },
+  {
+    slug: "hiteducation",
+    name: "HIT Education",
+    summary:
+      "A website dedicated to providing information about college events and exam-related questions, helping students find the information they need more quickly and efficiently.",
+    stack: ["REACT.JS", "TailwindCSS", "Expree.js", "MongoDB"],
+    category: "MERN Stack",
+    liveUrl: "https://hiteducation.online/"
   },
   {
     slug: "aeie-department-website",
@@ -48,6 +56,7 @@ const projects: PortfolioProject[] = [
     imageAlt: "AEIE department website",
     liveUrl: "https://hit-aeie.netlify.app/",
     category: "Web development",
+    featured: true,
   },
   {
     slug: "hitian-inside",
@@ -59,6 +68,7 @@ const projects: PortfolioProject[] = [
     imageAlt: "Hitian Inside website",
     liveUrl: "https://hitianinsideofficial-psi.vercel.app/",
     category: "Full stack",
+    featured: true,
   },
   {
     slug: "todo-list",
@@ -70,6 +80,7 @@ const projects: PortfolioProject[] = [
     imageAlt: "Todo list application",
     liveUrl: "https://todo-list-murex-six.vercel.app/",
     category: "Full stack",
+    featured: true,
   },
   {
     slug: "rock-paper-scissors",

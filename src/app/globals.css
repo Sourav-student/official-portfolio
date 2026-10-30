@@ -680,6 +680,23 @@ button {
   background: radial-gradient(circle at 75% 30%, #315868, transparent 35%), linear-gradient(135deg, #1d3148, #101726 72%);
 }
 
+.project-art > img {
+  object-fit: cover;
+  transition: transform 450ms ease;
+}
+
+.project-card:hover .project-art > img {
+  transform: scale(1.045);
+}
+
+.project-art::after {
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(transparent, rgba(7, 12, 22, 0.68));
+  content: "";
+  pointer-events: none;
+}
+
 .project-card-2 .project-art {
   background: radial-gradient(circle at 68% 28%, #354e77, transparent 34%), linear-gradient(135deg, #1c2b49, #101726 72%);
 }
@@ -779,6 +796,50 @@ button {
   color: #929e95;
   font-size: 11px;
   line-height: 1.7;
+}
+
+.project-card-actions,
+.work-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 18px 18px;
+}
+
+.project-card-action,
+.work-card-action {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: #c1cbe0;
+  font-size: 10px;
+  font-weight: 600;
+  transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
+}
+
+.project-card-action:hover,
+.work-card-action:hover {
+  border-color: rgba(121, 231, 220, 0.45);
+  color: var(--accent);
+}
+
+.project-card-action-primary,
+.work-card-action-primary {
+  border-color: rgba(121, 231, 220, 0.24);
+  color: var(--accent);
+  background: rgba(121, 231, 220, 0.07);
+}
+
+.project-card-action-primary:hover,
+.work-card-action-primary:hover {
+  border-color: var(--accent);
+  color: #10140b;
+  background: var(--accent);
 }
 
 .tag-list {
@@ -1178,7 +1239,6 @@ button {
 
 .work-card-link {
   display: block;
-  height: 100%;
 }
 
 .work-image {
@@ -1280,11 +1340,19 @@ button {
 }
 
 .work-summary {
-  min-height: 58px;
+  min-height: 68px;
   margin: 9px 0 14px;
   color: #939e95;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.work-card-actions {
+  padding: 0 16px 16px;
+}
+
+.work-card-action {
   font-size: 10px;
-  line-height: 1.7;
 }
 
 .back-link {

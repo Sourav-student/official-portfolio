@@ -255,14 +255,25 @@ export default function Home() {
                     aria-label={`View ${project.name} project details`}
                   >
                     <div className="project-art">
-                      <div className="art-grid" />
-                      <span className="art-index">0{index + 1}</span>
-                      <ProjectIcon className="art-icon" size={42} strokeWidth={1.4} aria-hidden="true" />
-                      <motion.span
-                        className="art-orb"
-                        animate={{ scale: [0.9, 1.12, 0.9], opacity: [0.5, 1, 0.5] }}
-                        transition={{ duration: 5 + index, repeat: Infinity, ease: "easeInOut" }}
-                      />
+                      {project.image ? (
+                        <Image
+                          src={project.image}
+                          alt={project.imageAlt ?? project.name}
+                          fill
+                          sizes="(max-width: 650px) 100vw, (max-width: 900px) 50vw, 33vw"
+                        />
+                      ) : (
+                        <>
+                          <div className="art-grid" />
+                          <span className="art-index">0{index + 1}</span>
+                          <ProjectIcon className="art-icon" size={42} strokeWidth={1.4} aria-hidden="true" />
+                          <motion.span
+                            className="art-orb"
+                            animate={{ scale: [0.9, 1.12, 0.9], opacity: [0.5, 1, 0.5] }}
+                            transition={{ duration: 5 + index, repeat: Infinity, ease: "easeInOut" }}
+                          />
+                        </>
+                      )}
                       <span className="art-label">{project.category}</span>
                     </div>
                     <div className="project-card-copy">
@@ -280,6 +291,21 @@ export default function Home() {
                       </div>
                     </div>
                   </Link>
+                  <div className="project-card-actions">
+                    <Link href={`/project-info/${project.slug}`} className="project-card-action">
+                      Project details <ArrowUpRight size={14} aria-hidden="true" />
+                    </Link>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="project-card-action project-card-action-primary"
+                      >
+                        Live project <ArrowUpRight size={14} aria-hidden="true" />
+                      </a>
+                    )}
+                  </div>
                 </motion.article>
               );
             })}

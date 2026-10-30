@@ -6,6 +6,11 @@ import { ArrowUpRight, FolderOpen } from "lucide-react";
 import { motion } from "motion/react";
 import projects from "@/datasets/projects";
 
+const archiveProjects = [
+  ...projects.filter((project) => project.liveUrl),
+  ...projects.filter((project) => !project.liveUrl),
+];
+
 export default function Works() {
   return (
     <main className="page-shell subpage">
@@ -25,11 +30,11 @@ export default function Works() {
 
       <div className="works-count">
         <span><FolderOpen size={16} aria-hidden="true" /> PROJECT ARCHIVE</span>
-        <span>{projects.length.toString().padStart(2, "0")} PROJECTS</span>
+        <span>{archiveProjects.length.toString().padStart(2, "0")} PROJECTS</span>
       </div>
 
       <div className="works-grid">
-        {projects.map((project, index) => (
+        {archiveProjects.map((project, index) => (
           <motion.article
             className="work-card"
             key={project.slug}
@@ -68,6 +73,21 @@ export default function Works() {
                 </div>
               </div>
             </Link>
+            <div className="work-card-actions">
+              <Link href={`/project-info/${project.slug}`} className="work-card-action">
+                Project details <ArrowUpRight size={14} aria-hidden="true" />
+              </Link>
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="work-card-action work-card-action-primary"
+                >
+                  Live project <ArrowUpRight size={14} aria-hidden="true" />
+                </a>
+              )}
+            </div>
           </motion.article>
         ))}
       </div>
